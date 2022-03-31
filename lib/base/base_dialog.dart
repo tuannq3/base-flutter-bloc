@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_smart_dialog/flutter_smart_dialog.dart';
 
 class BaseDialog {
@@ -22,6 +23,7 @@ class BaseDialog {
     }
     SmartDialog.show(
       widget: Container(
+        width: 1.sw,
         color: Colors.white,
         child: Text(message),
       ),

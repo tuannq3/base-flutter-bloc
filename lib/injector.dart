@@ -48,6 +48,5 @@ Future<void> initInjector() async {
   injector.registerFactory<HomeBloc>(() => HomeBloc(injector()));
 
   //Dialog
-
   injector.registerFactory<BaseDialog>(() => BaseDialog());
 }

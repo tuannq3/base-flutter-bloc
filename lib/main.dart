@@ -2,6 +2,7 @@ import 'package:baseblocflutter/injector.dart';
 import 'package:equatable/equatable.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_smart_dialog/flutter_smart_dialog.dart';
 
 import 'base/bloc_with_state.dart';
@@ -21,16 +22,18 @@ Future<void> main() async {
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return MultiBlocProvider(
-      providers: [
-        BlocProvider(create: (_) => injector.get<AppBloc>()),
-      ],
-      child: MaterialApp.router(
-        debugShowCheckedModeBanner: false,
-        theme: AppTheme().getLight(),
-        routeInformationParser: getRoute().routeInformationParser,
-        routerDelegate: getRoute().routerDelegate,
-        builder: FlutterSmartDialog.init(),
+    return ScreenUtilInit(
+      builder: () => MultiBlocProvider(
+        providers: [
+          BlocProvider(create: (_) => injector.get<AppBloc>()),
+        ],
+        child: MaterialApp.router(
+          debugShowCheckedModeBanner: false,
+          theme: AppTheme().getLight(),
+          routeInformationParser: getRoute().routeInformationParser,
+          routerDelegate: getRoute().routerDelegate,
+          builder: FlutterSmartDialog.init(),
+        ),
       ),
     );
   }

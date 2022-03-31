@@ -46,6 +46,7 @@ dependencies:
   logger: any  #for logging purpose
   go_router: ^3.0.6
   flutter_smart_dialog: ^3.4.0+2
+  flutter_screenutil: ^5.3.1
 
 dev_dependencies:
   flutter_test:
