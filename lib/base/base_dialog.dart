@@ -9,10 +9,10 @@ class BaseDialog {
   bool _allowShowMultiDialog = false;
 
   void showLoading() {
-    _isShow = true;
-    if (_isShow && !_allowShowMultiDialog) {
-      hideDialog();
-    }
+    // _isShow = true;
+    // if (_isShow && !_allowShowMultiDialog) {
+    //   hideDialog();
+    // }
     SmartDialog.showLoading();
   }
 
@@ -38,7 +38,14 @@ class BaseDialog {
     return _isShow;
   }
 
-  void setAllowShowMultiDialog(bool allowShowMultiDialog) {
-    this._allowShowMultiDialog = allowShowMultiDialog;
+  void setAllowShowMultiDialog({required bool allowShowMultiDialog}) {
+    _allowShowMultiDialog = allowShowMultiDialog;
+  }
+}
+
+extension ProgressDialogFutureExt<T> on Future<T> {
+  Future<T> withProgressDialog() {
+    BaseDialog().showLoading();
+    return whenComplete(() => BaseDialog().hideDialog());
   }
 }

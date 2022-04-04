@@ -46,6 +46,8 @@ dependencies:
   logger: any  #for logging purpose
   go_router: ^3.0.6
   flutter_smart_dialog: ^3.4.0+2
+  shared_preferences: ^2.0.13
+  flutter_svg: ^1.0.1
   flutter_screenutil: ^5.3.1
 
 dev_dependencies:
@@ -55,6 +57,8 @@ dev_dependencies:
   retrofit_generator: ^4.0.1
   build_runner: ^2.1.8
   json_serializable: ^6.1.5
+  flutter_gen_runner: ^4.1.6
+
   # The "flutter_lints" package below contains a set of recommended lints to
   # encourage good coding practices. The lint set provided by the package is
   # activated in the `analysis_options.yaml` file located at the root of your
@@ -65,6 +69,27 @@ dev_dependencies:
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
 
+flutter_gen:
+  output: lib/gen/ # Optional (default: lib/gen/)
+  line_length: 80   # Optional (default: 80)
+
+  integrations:
+    flutter_svg: true
+
+  assets:
+    enabled: true
+    package_parameter_enabled: false
+
+  fonts:
+    enabled: true
+
+#  colors:
+#    enabled: true
+#    inputs:
+#      - assets/color/colors.xml
+#      - assets/color/colors2.xml
+#      - assets/color/colors2.xml
+
 # The following section is specific to Flutter.
 flutter:
 
@@ -72,6 +97,8 @@ flutter:
   # included with your application, so that you can use the icons in
   # the material Icons class.
   uses-material-design: true
+  assets:
+    - assets/images/
 
   # To add assets to your application, add an assets section, like this:
   # assets:

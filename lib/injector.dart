@@ -1,4 +1,5 @@
 import 'package:baseblocflutter/base/base_dialog.dart';
+import 'package:baseblocflutter/common/utils/index.dart';
 import 'package:baseblocflutter/main.dart';
 import 'package:dio/dio.dart';
 import 'package:get_it/get_it.dart';
@@ -49,4 +50,6 @@ Future<void> initInjector() async {
 
   //Dialog
   injector.registerFactory<BaseDialog>(() => BaseDialog());
+
+  // Preference
 }

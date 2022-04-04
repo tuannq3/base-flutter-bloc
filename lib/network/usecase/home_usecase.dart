@@ -10,6 +10,6 @@ class HomeUseCase implements UseCase<DataState<LoginResponse>, dynamic> {
 
   @override
   Future<DataState<LoginResponse>> call({params}) {
-    return _repository.login({"user": "ngant2", "password": "Thiennga937"});
+    return _repository.login({"user": "ngant2", "password": "Thiennga97"});
   }
 }
